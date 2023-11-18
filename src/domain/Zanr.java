@@ -10,9 +10,12 @@ package domain;
  */
 public enum Zanr {
     
-    ROMAN,
+    Roman,
     POEZIJA,
-    ISTORIJSKI,
+    Istorijski,
     NAUCNA_FANTASTIKA,
-    DETEKTIVSKI,
+    Detektivski,
+    Sportski,
+    religija,
+    
 }

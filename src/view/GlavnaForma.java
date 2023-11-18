@@ -23,8 +23,9 @@ public class GlavnaForma extends javax.swing.JFrame {
     public GlavnaForma() {
         initComponents();
         kontroler=Controller.getInstance();
-        ModelTabeleKnjige modelTabele= new ModelTabeleKnjige(kontroler.getListaKnjiga());
-        jTableKnjige.setModel(modelTabele);
+      //  ModelTabeleKnjige modelTabele= new ModelTabeleKnjige(kontroler.getListaKnjiga());
+      ModelTabeleKnjige modelTabele= new ModelTabeleKnjige(kontroler.ucitajListuKnjigaIzBaze());
+      jTableKnjige.setModel(modelTabele);
     }
 
     /**
@@ -91,7 +92,8 @@ public class GlavnaForma extends javax.swing.JFrame {
 
         jLabelAutor.setText("Autor");
 
-        jComboBoxZanr.setModel(new DefaultComboBoxModel(Zanr.values()));
+        jComboBoxZanr.setModel(new DefaultComboBoxModel(Zanr.values())
+        );
 
         jLabel1.setText("Zanr");
 

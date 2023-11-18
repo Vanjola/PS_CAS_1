@@ -15,7 +15,8 @@ public class Autor {
     private String prezime;
     private int godinaRodjenja;
     private String biografija;
-
+    private int id;
+    
     public Autor() {
     }
 
@@ -24,6 +25,22 @@ public class Autor {
         this.prezime = prezime;
         this.godinaRodjenja = godinaRodjenja;
         this.biografija = biografija;
+    }
+
+    public Autor(String ime, String prezime, int godinaRodjenja, String biografija, int id) {
+        this.ime = ime;
+        this.prezime = prezime;
+        this.godinaRodjenja = godinaRodjenja;
+        this.biografija = biografija;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getIme() {

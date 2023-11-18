@@ -14,17 +14,38 @@ public class Knjiga {
     private String ISBN;
     private int godinaIzdanja;
     private Zanr zanr;
-
+    private int id;
+    
+    
     public Knjiga() {
     }
 
-    public Knjiga(String naslov, Autor autor, String ISBN, int godinaIzdanja, Zanr zanr) {
+   
+     public Knjiga(String naslov, Autor autor, String ISBN, int godinaIzdanja, Zanr zanr) {
         this.naslov = naslov;
         this.autor = autor;
         this.ISBN = ISBN;
         this.godinaIzdanja = godinaIzdanja;
         this.zanr = zanr;
     }
+
+    public Knjiga(String naslov, Autor autor, String ISBN, int godinaIzdanja, Zanr zanr, int id) {
+        this.naslov = naslov;
+        this.autor = autor;
+        this.ISBN = ISBN;
+        this.godinaIzdanja = godinaIzdanja;
+        this.zanr = zanr;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+     
  
     public Zanr getZanr() {
         return zanr;

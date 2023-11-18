@@ -4,6 +4,7 @@
  */
 package controller;
 
+import baza.DBBroker;
 import domain.Autor;
 import domain.Knjiga;
 import domain.Zanr;
@@ -19,7 +20,7 @@ import java.util.List;
  * @author vanja
  */
 public class Controller {
-    
+private DBBroker dbb;  
 private List<Knjiga> listaKnjiga;
 private List<Autor> listaAutora;
 
@@ -34,27 +35,28 @@ public static Controller instance;
 
 
     private Controller() {
-   Autor autor1=new Autor("Ivo","Andric",1892,"Biografija ivo bla bla");
-   Autor autor2=new Autor("Danilo","Kis",1935,"Biografija danilo bla bla");
-   Autor autor3=new Autor("Mesa","Selimovic",1910,"Biografija Mesa bla bla");
-
-   Knjiga knjiga1=new Knjiga("Na Drini cuprija",autor1,"123456789",1945,Zanr.DETEKTIVSKI);
-   Knjiga knjiga2=new Knjiga("Basta,pepeo",autor2,"987654321",1982,Zanr.ISTORIJSKI); 
-   Knjiga knjiga3=new Knjiga("Tvrdjava",autor3,"1122334455",1970,Zanr.ROMAN);
-   
-    listaKnjiga=new ArrayList<>();
-    listaAutora=new ArrayList<>();
-            
-    
-   listaKnjiga.add(knjiga1);
-   listaKnjiga.add(knjiga2);
-   listaKnjiga.add(knjiga3);
-   
-   
-   listaAutora.add(autor1);
-   listaAutora.add(autor2);
-   listaAutora.add(autor3);
-   
+        dbb=new DBBroker();
+//   Autor autor1=new Autor("Ivo","Andric",1892,"Biografija ivo bla bla");
+//   Autor autor2=new Autor("Danilo","Kis",1935,"Biografija danilo bla bla");
+//   Autor autor3=new Autor("Mesa","Selimovic",1910,"Biografija Mesa bla bla");
+//
+//   Knjiga knjiga1=new Knjiga("Na Drini cuprija",autor1,"123456789",1945,Zanr.DETEKTIVSKI);
+//   Knjiga knjiga2=new Knjiga("Basta,pepeo",autor2,"987654321",1982,Zanr.ISTORIJSKI); 
+//   Knjiga knjiga3=new Knjiga("Tvrdjava",autor3,"1122334455",1970,Zanr.ROMAN);
+//   
+//    listaKnjiga=new ArrayList<>();
+//    listaAutora=new ArrayList<>();
+//            
+//    
+//   listaKnjiga.add(knjiga1);
+//   listaKnjiga.add(knjiga2);
+//   listaKnjiga.add(knjiga3);
+//   
+//   
+//   listaAutora.add(autor1);
+//   listaAutora.add(autor2);
+//   listaAutora.add(autor3);
+//   
     }
 
     public List<Knjiga> getListaKnjiga() {
@@ -81,6 +83,10 @@ public static Controller instance;
     listaKnjiga.add(novaKnjiga);
 //        System.out.println("Knjiga je dodata");
 //        System.out.println(listaKnjiga);
+    }
+
+    public List<Knjiga> ucitajListuKnjigaIzBaze() {
+            return dbb.ucitajListuKnjigaIzBaze();
     }
 
 
